@@ -23,7 +23,7 @@ def main():
 	
 	## ECDSAにてCSRを作成するコマンドを出力
         f_arr = 'openssl ecparam -name secp384r1 -genkey | openssl ec -out {0}.key -des3'
-        s_arr = 'openssl req -new -key {0}.key -sha256 -out {1}.csr -subj "/C=JP/L=Academe2/O=Shimane University/OU=General Information Processing Center/CN={2}" -out {3}.csr'
+        s_arr = 'openssl req -new -key {0}.key -sha256 -out {1}.csr -subj "/C=JP/L=Tokyo/O=hogehoge co.ltd,/OU=develop div./CN={2}" -out {3}.csr'
         res1 = f_arr.format(row)
         res2 = s_arr.format(row,row,row,row)
         res1 = res1+'\n'
