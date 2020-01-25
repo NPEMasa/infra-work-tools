@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 ########## コマンドを2つ出力するプログラム  ##########
-## python csrcmd-out.py fqdnlst.txt
-## 
+## python csrcmdOut.py <filename> 
+## 
+## <filename> : FQDN list text file
 import sys
 import re
 fname = sys.argv[1]
