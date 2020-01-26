@@ -13,9 +13,9 @@ def main():
     with open(fname) as f:
         l = f.readlines()
         
-    print(l)
+    #print(l)  ## debug only
     long1 = len(l) - 1
-    #print(long1)
+    #print(long1) ## debug only
     row = ''
     for row in l:
         
@@ -29,10 +29,10 @@ def main():
         res2 = s_arr.format(row,row,row,row)
         res1 = res1+'\n'
         print(res1)
-        #print('\n')
+        #print('\n') ## debug only
         res2 = res2+'\n\n'
         print(res2)
-        #print('\n\n')
+        #print('\n\n') ## debug only
         with open(outfile, mode='a') as f:
             f.write(res1)
             f.write(res2)
