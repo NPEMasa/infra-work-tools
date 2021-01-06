@@ -1,20 +1,23 @@
-# -*- coding: utf-8 -*-
-# opensslコマンドで対象ドメインの証明書情報を取得するプログラム
-# python getCertinfo.py <FQDN> 
-# 
-# <FQDN> : target fqdn
+# -*- coding: utf-8 -*-
 
-import re
+import re
+import sys
 import subprocess
-fqdn = sys.argv[1]
-cmd  = ''
 
-i = 0
-def main():
-    cmd = 'openssl s_client -connect ' + fqdn
-    print(cmd)
+class certinfo():
 
+    param = sys.argv[1]
 
-if __name__ == '__main__':
-    main()
+    def getCert(self):
 
+        cmd = 'echo "Q" | openssl s_client -connect ' + self.param + ':443 > certinfo.txt'
+        cp = subprocess.call(cmd, encoding='UTF-8', shell=True)
+        print(cp)
+            
+def main():
+
+    m = certinfo()
+    m.getCert()
+
+if __name__ == '__main__':
+    main()
